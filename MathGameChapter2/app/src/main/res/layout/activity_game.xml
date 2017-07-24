@@ -12,92 +12,48 @@
         android:id="@+id/textPartA"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_marginEnd="21dp"
         android:layout_marginStart="16dp"
         android:contentDescription="33"
         android:text="3"
         android:textColor="@android:color/black"
         android:textSize="55sp"
-        tools:layout_editor_absoluteY="161dp"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteY="258dp"
+        tools:layout_editor_absoluteX="48dp" />
 
     <TextView
         android:id="@+id/textPartD"
         android:layout_width="49dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="19dp"
+        android:layout_height="77dp"
         android:text="4"
         android:textColor="@android:color/black"
         android:textSize="55sp"
-        android:layout_marginEnd="23dp"
-        tools:layout_editor_absoluteY="161dp"
+        android:layout_marginEnd="33dp"
+        tools:layout_editor_absoluteY="258dp"
         tools:layout_editor_absoluteX="302dp" />
 
     <TextView
         android:id="@+id/textPartC"
-        android:layout_width="53dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="18dp"
+        android:layout_width="35dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="101dp"
         android:text="2"
         android:textColor="@android:color/black"
         android:textSize="55sp"
-        android:layout_marginEnd="19dp"
-        tools:layout_editor_absoluteY="161dp"
-        tools:layout_editor_absoluteX="205dp" />
+        android:layout_marginEnd="100dp"
+        tools:layout_editor_absoluteY="258dp"
+        tools:layout_editor_absoluteX="213dp" />
 
     <TextView
         android:id="@+id/textPartB"
-        android:layout_width="67dp"
+        android:layout_width="43dp"
         android:layout_height="82dp"
         android:text="5"
         android:textColor="@android:color/black"
         android:textSize="55sp"
         android:layout_marginEnd="65dp"
         android:layout_marginStart="65dp"
-        tools:layout_editor_absoluteY="161dp"
-        tools:layout_editor_absoluteX="104dp" />
-
-    <Button
-        android:id="@+id/buttonChoice1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="4"
-        android:textColor="@android:color/black"
-        android:textSize="35sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonChoice2"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp" />
-
-    <Button
-        android:id="@+id/buttonChoice2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5"
-        android:textColor="@android:color/black"
-        android:textSize="35sp"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/textScore"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="90dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <Button
-        android:id="@+id/buttonChoice3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="6"
-        android:textSize="35sp"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonChoice2"
-        tools:layout_constraintBaseline_creator="1"
-        android:layout_marginRight="16dp" />
+        tools:layout_editor_absoluteY="258dp"
+        tools:layout_editor_absoluteX="127dp" />
 
     <TextView
         android:id="@+id/textScore"

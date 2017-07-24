@@ -58,7 +58,7 @@ public class GameActivity extends AppCompatActivity{
     void setQuestion(){
         TwentyFourComputation compute = new TwentyFourComputation();
         double[][] numberArray = compute.generateNumbers();
-        int numberRange = 11419;
+        int numberRange = 3185;
         Random randInt = new Random();
         int index1 = randInt.nextInt(numberRange);
 
