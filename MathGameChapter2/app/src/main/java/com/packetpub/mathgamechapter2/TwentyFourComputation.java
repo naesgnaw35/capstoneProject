@@ -10,10 +10,10 @@ public class TwentyFourComputation {
     double x = 0;
     double y = 0;
     double z = 0;
-    double[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    double[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13};
     String[] operations = {"+", "-", "*", "/"};
     int counter = 0;
-    double[][] successfulNumbers = new double[3185][4];
+    double[][] successfulNumbers = new double[11419][4];
 
 
     private static void printArray(double[][] anArray) {

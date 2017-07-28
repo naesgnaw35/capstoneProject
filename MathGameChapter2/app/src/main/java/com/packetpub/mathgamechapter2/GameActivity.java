@@ -1,11 +1,14 @@
 package com.packetpub.mathgamechapter2;
 
+import android.content.ClipData;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.DragEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.Random;
 
@@ -16,6 +19,7 @@ public class GameActivity extends AppCompatActivity{
     TextView textObjectPartB;
     TextView textObjectPartC;
     TextView textObjectPartD;
+    TextView textBoxedOne;
     TextView textObjectScore;
     TextView textObjectLevel;
 
@@ -36,13 +40,16 @@ public class GameActivity extends AppCompatActivity{
          */
 
         textObjectPartA =
-                (TextView)findViewById(R.id.textPartA);
+                (TextView)findViewById(R.id.firstNumber);
         textObjectPartB =
-                (TextView)findViewById(R.id.textPartB);
+                (TextView)findViewById(R.id.thirdNumber);
         textObjectPartC =
-                (TextView) findViewById(R.id.textPartC);
+                (TextView) findViewById(R.id.fourthNumber);
         textObjectPartD =
-                (TextView) findViewById(R.id.textPartD);
+                (TextView) findViewById(R.id.secondNumber);
+        textBoxedOne =
+                (TextView) findViewById(R.id.textBoxedOne);
+
 
 
         textObjectScore =
@@ -52,13 +59,65 @@ public class GameActivity extends AppCompatActivity{
 
         setQuestion();
 
+        textObjectPartA.setOnLongClickListener(longClickListener);
+        textObjectPartB.setOnLongClickListener(longClickListener);
+        textObjectPartC.setOnLongClickListener(longClickListener);
+        textObjectPartD.setOnLongClickListener(longClickListener);
+        textBoxedOne.setOnDragListener(dragListener);
+
+
     }
+
+    View.OnLongClickListener longClickListener = new View.OnLongClickListener(){
+        @Override
+        public boolean onLongClick(View v){
+            ClipData data = ClipData.newPlainText("", "");
+            View.DragShadowBuilder myShadowBuilder = new View.DragShadowBuilder(v);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                v.startDragAndDrop(data, myShadowBuilder, v, 0);
+            }
+            else {
+                v.startDrag(data, myShadowBuilder, v, 0);
+            }
+
+
+            return true;
+        }
+    };
+
+    View.OnDragListener dragListener = new View.OnDragListener(){
+
+        @Override
+        public boolean onDrag(View v, DragEvent event) {
+            int dragEvent = event.getAction();
+
+            switch (dragEvent){
+                case DragEvent.ACTION_DRAG_ENTERED:
+                    final View view = (View) event.getLocalState();
+                    if (view.getId() == R.id.firstNumber){
+                        textBoxedOne.setText(textObjectPartA.getText());
+                    }
+                    if (view.getId() == R.id.secondNumber){
+                        textBoxedOne.setText(textObjectPartD.getText());
+                    }
+
+
+                    break;
+                case DragEvent.ACTION_DRAG_EXITED:
+                    break;
+                case DragEvent.ACTION_DROP:
+                    break;
+            }
+            return true;
+        }
+    };
 
 
     void setQuestion(){
         TwentyFourComputation compute = new TwentyFourComputation();
         double[][] numberArray = compute.generateNumbers();
-        int numberRange = 3185;
+        int numberRange = 11419;
         Random randInt = new Random();
         int index1 = randInt.nextInt(numberRange);
 
